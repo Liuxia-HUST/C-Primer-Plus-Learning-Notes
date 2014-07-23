@@ -1,0 +1,22 @@
+// hiding.c -- 代码块内的变量
+#include <stdio.h>
+int main(void)
+{
+    int x = 30;
+    printf("x in outer block: %d\n", x);
+    {
+        int x = 77; //覆盖原来的x
+        printf("x in inner block: %d\n", x);
+    }
+    printf("x in outer block: %d\n", x);
+    while(x++ < 33)
+    {
+        int x = 100;
+        x++;
+        printf("x in inner block: %d\n", x);
+    }
+    printf("x in outer block: %d\n", x);
+
+    return 0;
+
+}
